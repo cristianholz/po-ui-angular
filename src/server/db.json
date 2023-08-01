@@ -1,0 +1,121 @@
+{
+  "users": [
+    {
+      "name": "loren",
+      "username": "loren",
+      "birthdate": "2023-07-04",
+      "genre": "male",
+      "email": "kw2@kw2.com.br",
+      "street": "Marciclio dias",
+      "suite": "loren",
+      "city": "",
+      "state": 5,
+      "zipcode": "93900000",
+      "phone": "51998361008",
+      "website": "sad",
+      "id": 2
+    },
+    {
+      "name": "Cristian",
+      "username": "Holz",
+      "birthdate": "2023-07-14",
+      "genre": "homen",
+      "email": "kw2@kw2.com.br",
+      "street": "Marciclio dias",
+      "suite": "loren",
+      "city": "2",
+      "state": 3,
+      "zipcode": "93900000",
+      "phone": "",
+      "website": "",
+      "id": 4
+    }
+  ],
+  "posts": [
+    {
+      "title": "loren",
+      "body": "loren",
+      "active": "false",
+      "id": 1
+    },
+    {
+      "title": "asdsad",
+      "body": "asddasd",
+      "active": "true",
+      "id": 2
+    },
+    {
+      "title": "fsdsfd",
+      "body": "sdfsdfsdf",
+      "active": "true",
+      "id": 3
+    },
+    {
+      "title": "asdsadasd",
+      "body": "asdasdsdasd",
+      "active": "false",
+      "id": 4
+    }
+  ],
+  "metadata": {
+    "version": 3,
+    "type": "list",
+    "autoRouter": true,
+    "title": "Lista de Posts",
+    "actions": {
+      "detail": "detail/:id",
+      "duplicate": "new",
+      "edit": "edit/:id",
+      "new": "new",
+      "remove": true,
+      "removeAll": true,
+      "beforeNew": "https://po-sample-api.herokuapp.com/v1/people/before-new"
+    },
+    "fields": [
+      {
+        "property": "id",
+        "visible": false,
+        "key": true
+      },
+      {
+        "property": "title",
+        "label": "Titulo",
+        "filter": true,
+        "gridColumns": 6
+      },
+      {
+        "property": "body",
+        "label": "Descrição"
+      },
+      {
+        "property": "active",
+        "type": "Status",
+        "optionsMulti": true,
+        "filter": true,
+        "gridColumns": 5,
+        "options": [
+          {
+            "value": "true",
+            "label": "Ativo"
+          },
+          {
+            "value": "false",
+            "label": "Inativo"
+          }
+        ],
+        "labels": [
+          {
+            "value": "active",
+            "color": "color-10",
+            "label": "Ativo"
+          },
+          {
+            "value": "inactive",
+            "color": "color-07",
+            "label": "Inativo"
+          }
+        ]
+      }
+    ]
+  }
+}

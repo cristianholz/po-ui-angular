@@ -1,0 +1,28 @@
+<po-page-default p-title="Usuários cadastrados">
+  <div class="container-search">
+    <po-input
+      class="po-md-4"
+      name="search"
+      p-placeholder="Pesquisar"
+      p-label=""
+      p-help=""
+      p-clean="true"
+      p-icon="po-icon-search"
+      (p-change)="changeEvent($event)"
+      (p-change-model)="changeEvent($event)"
+      (p-enter)="changeEvent($event)"
+    >
+    </po-input>
+    <po-button p-label="Buscar" (p-click)="onClickSearchValue()"> </po-button>
+  </div>
+  <po-table
+    [p-columns]="columnsTable"
+    [p-items]="usersList"
+    [p-actions]="actions"
+    [p-actions-right]="true"
+    [p-sort]="true"
+    [p-striped]="true"
+    [p-loading]="isLoading"
+  >
+  </po-table>
+</po-page-default>

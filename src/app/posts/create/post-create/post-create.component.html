@@ -1,0 +1,39 @@
+<po-page-detail [p-title]="title" (p-back)="back()">
+  <form [formGroup]="reactiveForm">
+    <div class="po-row">
+      <po-input
+        class="po-md-6"
+        name="title"
+        formControlName="title"
+        p-label="Titulo"
+        p-clean
+      >
+      </po-input>
+      <po-radio-group
+        class="po-md-6"
+        name="active"
+        formControlName="active"
+        p-label="Ativo"
+        [p-options]="radioGroupOptions"
+      >
+      </po-radio-group>
+    </div>
+    <div class="po-row">
+      <po-rich-text class="po-md-12" formControlName="body"></po-rich-text>
+    </div>
+    <po-button
+      *ngIf="!idPost"
+      [p-disabled]="!reactiveForm.valid"
+      p-label="Enviar"
+      (p-click)="saveForm()"
+    >
+    </po-button>
+    <po-button
+      *ngIf="idPost"
+      [p-disabled]="!reactiveForm.valid"
+      p-label="Editar"
+      (p-click)="editPost()"
+    >
+    </po-button>
+  </form>
+</po-page-detail>

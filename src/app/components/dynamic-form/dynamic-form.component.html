@@ -1,0 +1,22 @@
+<po-dynamic-form #dynamicForm [p-fields]="fields" [p-value]="userValues">
+</po-dynamic-form>
+
+<div class="po-row">
+  <po-button
+    *ngIf="!this.idUser"
+    [p-disabled]="!dynamicForm.form.valid"
+    class="po-md-3"
+    p-label="Save"
+    (p-click)="saveUser(); dynamicForm.form.reset()"
+  >
+  </po-button>
+
+  <po-button
+    *ngIf="this.idUser"
+    [p-disabled]="!dynamicForm.form.valid"
+    class="po-md-3"
+    p-label="Update"
+    (p-click)="updateUser()"
+  >
+  </po-button>
+</div>
