@@ -16,7 +16,7 @@ export class PostsService {
   }
 
   updatePost(PostId: number, body: Post) {
-    return this.http.put(`${this.ApiRest}/${PostId}`, body);
+    return this.http.put<Post>(`${this.ApiRest}/${PostId}`, body);
   }
 
   getPost(PostId: number) {

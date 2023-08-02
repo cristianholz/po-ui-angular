@@ -22,7 +22,7 @@ export class UsersService {
   }
 
   putUser(UserId: number, body: User) {
-    return this.http.put(`${this.ApiRest}/${UserId}`, body);
+    return this.http.put<User>(`${this.ApiRest}/${UserId}`, body);
   }
 
   getUserList(term: string): Observable<any> {

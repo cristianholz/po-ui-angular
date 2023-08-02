@@ -27,16 +27,16 @@ export class PostCreateComponent {
   ];
 
   constructor(
-    private fb: UntypedFormBuilder,
-    private route: ActivatedRoute,
-    private postForm: PostsService,
+    public fb: UntypedFormBuilder,
+    public route: ActivatedRoute,
+    public postForm: PostsService,
     public poNotification: PoNotificationService,
-    private router: Router
+    public router: Router
   ) {
     this.createReactiveForm();
   }
 
-  private setFormValue() {
+  setFormValue() {
     this.postForm.getPost(this.idPost).subscribe((post: Post) => {
       this.reactiveForm.get('title').setValue(post.title);
       this.reactiveForm.body = this.reactiveForm
@@ -79,7 +79,7 @@ export class PostCreateComponent {
         this.router.navigate(['/posts']);
       },
       error: (error: string) => {
-        this.poNotification.success(`Error: ${error}`);
+        this.poNotification.error(`Error: ${error}`);
       },
     });
   }
